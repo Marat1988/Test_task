@@ -24,8 +24,8 @@ CREATE UNIQUE NONCLUSTERED INDEX IX_NameProduct ON Products --Создание �
 /*IdCategory - код категории
   NameCategories - навазение категории*/
 CREATE TABLE Categories (CategoryId INT IDENTITY(1,1) NOT NULL, 
-					     NameCategory VARCHAR(50) NOT NULL
-					     CONSTRAINT PK_IdCategories PRIMARY KEY (CategoryId))
+			 NameCategory VARCHAR(50) NOT NULL
+CONSTRAINT PK_IdCategories PRIMARY KEY (CategoryId))
 --Чтобы не повторялось название категории, для этого создаем индекс
 CREATE UNIQUE NONCLUSTERED INDEX IX_NameCategories ON Categories --Создание уникального некластеризованного индекса
 (
