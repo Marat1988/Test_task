@@ -13,7 +13,7 @@ namespace LibraryFigure
     }
 
     public delegate void MyMessage(string message);
-    public class Triangle : Figure
+    public sealed class Triangle : Figure
     {
         private readonly double a;
         private readonly double b;
@@ -57,7 +57,7 @@ namespace LibraryFigure
             return $"Площадь треугольника равна {GetSquare()}";
         }
     }
-    public class Circle : Figure
+    public sealed class Circle : Figure
     {
         private readonly int radius;
 
