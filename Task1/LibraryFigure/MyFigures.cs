@@ -26,6 +26,8 @@ namespace LibraryFigure
         {
             if (a <= 0 || b <= 0 || c <= 0)
                 throw new ArgumentOutOfRangeException("Сторона не может быть отрицательной или равной нулю");
+            if (a + b < c || a + c < b || b + c < a)
+                throw new ArithmeticException("Заданные стороны не образуют треугольник!");
             this.a = a;
             this.b = b;
             this.c = c;
@@ -67,6 +69,8 @@ namespace LibraryFigure
         {
             if (radius <= 0)
                 throw new ArgumentOutOfRangeException("Радиус не может быть отрицательным");
+            if (Double.IsNaN(radius))
+                throw new ArgumentException("Радиус окружности должен быть числом!");
             this.radius = radius;
         }
         public override double GetSquare() => Math.PI * radius * radius;

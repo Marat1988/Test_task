@@ -22,6 +22,7 @@ namespace Task1
             {
                 Console.WriteLine(item.ToString());
             }
+            Console.ReadKey();
         }
 
         static void MessageDialog(string message) => Console.Write(message);
