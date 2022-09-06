@@ -5,18 +5,18 @@
 CREATE TABLE Products (ProductId INT IDENTITY(1,1) NOT NULL, 
 			ShowCaseCode INT NOT NULL,
 			NameProduct VARCHAR(50) NOT NULL
-			CONSTRAINT PK_ProductId PRIMARY KEY (ProductId ),
+			CONSTRAINT PK_ProductId PRIMARY KEY (ProductId),
 			CONSTRAINT CK_ShowCaseCode CHECK (ShowCaseCode>=0)--Ограничение для витринного кода. Чтобы не было значений меньше либо равно нулю
 )
 --Создаем уникальный некластеризованный индекс для поля ShowcaseCode таблицы Products
 --Витринный код должен быть уникальный у товаров. Создаю индекс для того,
 --чтобы не повторялись витринные кода
-CREATE UNIQUE NONCLUSTERED INDEX IX_Products ON Products --Новое для меня. Создание некластеризованного индекса
+CREATE UNIQUE NONCLUSTERED INDEX IX_Products ON Products --Создание уникального некластеризованного индекса
 (
 	ShowCaseCode ASC
 )
 --Чтобы не повторялись название товаров, для этого создаем индекс
-CREATE UNIQUE NONCLUSTERED INDEX IX_NameProduct ON Products --Новое для меня. Создание уникального некластеризованного индекса
+CREATE UNIQUE NONCLUSTERED INDEX IX_NameProduct ON Products --Создание уникального некластеризованного индекса
 (
 	NameProduct ASC
 )
@@ -27,7 +27,7 @@ CREATE TABLE Categories (CategoryId INT IDENTITY(1,1) NOT NULL,
 					     NameCategory VARCHAR(50) NOT NULL
 					     CONSTRAINT PK_IdCategories PRIMARY KEY (CategoryId))
 --Чтобы не повторялось название категории, для этого создаем индекс
-CREATE UNIQUE NONCLUSTERED INDEX IX_NameCategories ON Categories --Новое для меня. Создание уникального некластеризованного индекса
+CREATE UNIQUE NONCLUSTERED INDEX IX_NameCategories ON Categories --Создание уникального некластеризованного индекса
 (
 	NameCategory ASC
 )
