@@ -16,7 +16,7 @@ namespace Task1
                                  new Circle(4),
                                  new Circle(5),
                                  new Triangle(7, 8, 9, MessageDialog),
-                                 new Triangle(8, 6, 10, MessageDialog), //Прямоугольный треугольник
+                                 new Triangle(8, 6, 10, MessageDialog) //Прямоугольный треугольник
             };
             foreach (var item in figures)
             {

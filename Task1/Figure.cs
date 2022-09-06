@@ -43,7 +43,7 @@ namespace Task1
             }
             else
             {
-                //Формула герона
+                //Формула Герона
                 double p = (a + b + c) / 2; //Полупериметр
                 return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
             }
@@ -59,9 +59,9 @@ namespace Task1
     }
     class Circle : Figure
     {
-        private readonly double radius;
+        private readonly int radius;
 
-        public Circle(double radius)
+        public Circle(int radius)
         {
             this.radius = radius;
         }
