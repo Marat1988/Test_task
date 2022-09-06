@@ -5,7 +5,9 @@
 CREATE TABLE Products (IdProduct INT IDENTITY(1,1) NOT NULL, 
 			ShowCaseCode INT NOT NULL,
 			NameProduct VARCHAR(50) NOT NULL
-			CONSTRAINT PK_IdProduct PRIMARY KEY (IdProduct))
+			CONSTRAINT PK_IdProduct PRIMARY KEY (IdProduct),
+			CONSTRAINT CK_ShowCaseCode CHECK (ShowCaseCode>=0)--Ограничение для витринного кода. Чтобы не было значений меньше либо равно нулю
+)
 --Создаем уникальный некластеризованный индекс для поля ShowcaseCode таблицы Products
 --Витринный код должен быть уникальный у товаров. Создаю индекс для того,
 --чтобы не повторялись витринные кода
