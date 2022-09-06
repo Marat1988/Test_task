@@ -3,8 +3,8 @@
   ShowcaseCode - витринный код товара
   NameProduct - Название товара*/
 CREATE TABLE Products (ProductId INT IDENTITY(1,1) NOT NULL, 
-					   ShowCaseCode INT NOT NULL,
-					   ProductName VARCHAR(50) NOT NULL
+			ShowCaseCode INT NOT NULL,
+			ProductName VARCHAR(50) NOT NULL
 CONSTRAINT PK_ProductId PRIMARY KEY (ProductId),
 CONSTRAINT CK_ShowCaseCode CHECK (ShowCaseCode>=0)--Ограничение для витринного кода. Чтобы не было значений меньше либо равно нулю
 )
@@ -24,7 +24,7 @@ CREATE UNIQUE NONCLUSTERED INDEX IX_NameProduct ON Products --Создание �
 /*IdCategory - код категории
   NameCategories - навазение категории*/
 CREATE TABLE Categories (CategoryId INT IDENTITY(1,1) NOT NULL, 
-						 CategoryName VARCHAR(50) NOT NULL
+			 CategoryName VARCHAR(50) NOT NULL
 CONSTRAINT PK_IdCategories PRIMARY KEY (CategoryId))
 --Чтобы не повторялось название категории, для этого создаем индекс
 CREATE UNIQUE NONCLUSTERED INDEX IX_NameCategories ON Categories --Создание уникального некластеризованного индекса
@@ -33,9 +33,9 @@ CREATE UNIQUE NONCLUSTERED INDEX IX_NameCategories ON Categories --Создан�
 )
 --Создаем таблицу Категории
 CREATE TABLE ProductsCategory (ProductId INT,
-							   CategoryId INT
-CONSTRAINT PK_ProductCategory PRIMARY KEY(ProductId ASC, 
-										  CategoryId ASC),
+			       CategoryId INT
+CONSTRAINT PK_ProductCategory PRIMARY KEY (ProductId ASC, 
+					   CategoryId ASC),
 CONSTRAINT FK_Products FOREIGN KEY (ProductId) REFERENCES Products(ProductId) ON DELETE CASCADE ON UPDATE NO ACTION, --Связываю с таблицей Products
 CONSTRAINT FK_Categories FOREIGN KEY (CategoryId) REFERENCES Categories(CategoryId) ON DELETE CASCADE ON UPDATE NO ACTION --Связываю с таблицей Categories
 )
