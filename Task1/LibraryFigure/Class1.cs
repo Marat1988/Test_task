@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task1
+namespace LibraryFigure
 {
     public abstract class Figure
     {
@@ -12,8 +12,8 @@ namespace Task1
         public abstract double GetSquare();
     }
 
-    delegate void MyMessage(string message);
-    class Triangle : Figure
+    public delegate void MyMessage(string message);
+    public class Triangle : Figure
     {
         private readonly double a;
         private readonly double b;
@@ -57,7 +57,7 @@ namespace Task1
             return $"Площадь треугольника равна {GetSquare()}";
         }
     }
-    class Circle : Figure
+    public class Circle : Figure
     {
         private readonly int radius;
 
@@ -67,5 +67,5 @@ namespace Task1
         }
         public override double GetSquare() => Math.PI * radius * radius;
         public override string ToString() => $"Площадь круга равна {GetSquare()}. Радиус круга равен {radius}";
-     }
+    }
 }
