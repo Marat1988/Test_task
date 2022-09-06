@@ -34,8 +34,8 @@ CREATE UNIQUE NONCLUSTERED INDEX IX_NameCategories ON Categories --Создан�
 --Создаем таблицу Категории
 CREATE TABLE ProductsCategory (ProductId INT,
 							   CategoryId INT,
-CONSTRAINT PK_ProductCategory PRIMARY KEY(ProductId ASC,
-									      CategoryId ASC),
+CONSTRAINT PK_ProductCategory PRIMARY KEY(ProductId ASC, 
+										  CategoryId ASC),
 CONSTRAINT FK_Products FOREIGN KEY (ProductId) REFERENCES Products(ProductId) ON DELETE CASCADE ON UPDATE NO ACTION, --Связываю с таблицей Products
 CONSTRAINT FK_Categories FOREIGN KEY (CategoryId) REFERENCES Categories(CategoryId) ON DELETE CASCADE ON UPDATE NO ACTION --Связываю с таблицей Categories
 )
