@@ -3,9 +3,9 @@
   ShowcaseCode - витринный код товара
   NameProduct - Название товара*/
 CREATE TABLE Products (IdProduct INT IDENTITY(1,1) NOT NULL, 
-					   ShowCaseCode INT NOT NULL,
-					   NameProduct VARCHAR(50) NOT NULL
-					   CONSTRAINT PK_IdProduct PRIMARY KEY (IdProduct))
+			ShowCaseCode INT NOT NULL,
+			NameProduct VARCHAR(50) NOT NULL
+			CONSTRAINT PK_IdProduct PRIMARY KEY (IdProduct))
 --Создаем уникальный некластеризованный индекс для поля ShowcaseCode таблицы Products
 --Витринный код должен быть уникальный у товаров. Создаю индекс для того,
 --чтобы не повторялись витринные кода
@@ -31,9 +31,9 @@ CREATE UNIQUE NONCLUSTERED INDEX IX_NameCategories ON Categories --Новое д
 )
 --Создаем таблицу Категории
 CREATE TABLE ProductsCategory (IdProduct INT,
-							   IdCategory INT,
-							   CONSTRAINT PK_ProductCategory PRIMARY KEY(IdProduct ASC,
-																		 IdCategory ASC),
+			       IdCategory INT,
+			       CONSTRAINT PK_ProductCategory PRIMARY KEY(IdProduct ASC,
+									 IdCategory ASC),
 CONSTRAINT FK_Products FOREIGN KEY (IdProduct) REFERENCES Products(IdProduct) ON DELETE CASCADE ON UPDATE NO ACTION, --Связываю с таблицей Products
 CONSTRAINT FK_Categories FOREIGN KEY (IdCategory) REFERENCES Categories(IdCategory) ON DELETE CASCADE ON UPDATE NO ACTION --Связываю с таблицей Categories
 )
