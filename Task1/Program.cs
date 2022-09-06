@@ -15,7 +15,8 @@ namespace Task1
             Figure[] figures = { new Triangle(8, 10, 15, MessageDialog),
                                  new Circle(4),
                                  new Circle(5),
-                                 new Triangle(7, 8, 9, MessageDialog)
+                                 new Triangle(7, 8, 9, MessageDialog),
+                                 new Triangle(8, 6, 10, MessageDialog), //Прямоугольный треугольник
             };
             foreach (var item in figures)
             {
@@ -23,6 +24,6 @@ namespace Task1
             }
         }
 
-        static void MessageDialog(string message) => Console.WriteLine(message);
+        static void MessageDialog(string message) => Console.Write(message);
     }
 }

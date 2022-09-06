@@ -53,7 +53,7 @@ namespace Task1
         public override string ToString()
         {
             if (ThisRightTriangle())
-                message?.Invoke("Треугольник является прямоугольным");
+                message?.Invoke($"Треугольник со сторонами {a}, {b}, {c} является прямоугольным. ");
             return $"Площадь треугольника равна {GetSquare()}";
         }
     }
