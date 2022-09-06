@@ -8,8 +8,10 @@
  <li>Проверку на то, является ли треугольник прямоугольным</li>
 </ul>
 
-Исходный код библиотеки в папке Task1\LibraryFigure
-Юнит тесты в папке Task1\LibraryFigureUnitTest
+Исходный код библиотеки в папке Task1\LibraryFigure<br>
+Юнит тесты в папке Task1\LibraryFigureUnitTest<br>
+Проба работы с библиотекой в папке Task1\MyProject<br>
+
 В первый раз вообще сделал юнит вообще делал юнит тесты:) Помогло это видео https://www.youtube.com/watch?v=p3EUhUjv2LM&ab_channel=ITVDN
 
 <b>P.S. Все сделано, кроме compile-time. Не пойду, как это можно реализовать</b>
