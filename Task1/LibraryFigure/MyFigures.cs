@@ -24,6 +24,8 @@ namespace LibraryFigure
 
         public Triangle(double a, double b, double c, MyMessage message)
         {
+            if (a <= 0 || b <= 0 || c <= 0)
+                throw new ArgumentOutOfRangeException("Сторона не может быть отрицательной или равной нулю");
             this.a = a;
             this.b = b;
             this.c = c;
@@ -63,6 +65,8 @@ namespace LibraryFigure
 
         public Circle(int radius)
         {
+            if (radius <= 0)
+                throw new ArgumentOutOfRangeException("Радиус не может быть отрицательным");
             this.radius = radius;
         }
         public override double GetSquare() => Math.PI * radius * radius;
